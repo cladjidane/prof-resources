@@ -1,22 +1,29 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
+import { signToken } from '@/lib/auth'
 
 export async function POST(request: Request) {
+  const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD
+  const ADMIN_SECRET = process.env.ADMIN_SECRET
+
+  if (!ADMIN_PASSWORD || !ADMIN_SECRET) {
+    return NextResponse.json(
+      { success: false, message: 'Configuration serveur manquante' },
+      { status: 500 }
+    )
+  }
+
   const body = await request.json()
   const { password } = body
 
-  // En production, ce mot de passe doit venir d'une variable d'environnement
-  // Ex: process.env.ADMIN_PASSWORD
-  // Pour l'instant, je mets une valeur par défaut si la variable n'existe pas
-  const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123'
-
   if (password === ADMIN_PASSWORD) {
-    // Création du cookie de session
-    // HttpOnly = inaccessible via JS (sécurité XSS)
-    // Secure = HTTPS uniquement (en prod)
-    cookies().set('admin_session', 'true', {
+    const timestamp = Math.floor(Date.now() / 1000).toString()
+    const token = signToken(timestamp)
+
+    cookies().set('admin_session', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
       maxAge: 60 * 60 * 24, // 24 heures
       path: '/',
     })
