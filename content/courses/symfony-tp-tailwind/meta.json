@@ -1,0 +1,24 @@
+{
+  "id": "symfony-tp-tailwind",
+  "title": "Symfony - TP Page d'accueil avec Tailwind",
+  "description": "Créer une page d'accueil complète avec Controller, Twig et Tailwind CSS",
+  "school": "ubo",
+  "specialty": "deust-tmic",
+  "tags": ["symfony", "php", "twig", "tailwind", "css"],
+  "resources": [
+    {
+      "id": "code",
+      "type": "code",
+      "title": "Code à copier",
+      "file": "code.md"
+    },
+    {
+      "id": "pptx",
+      "type": "download",
+      "title": "Présentation PowerPoint",
+      "file": "files/symfony-tp-tailwind.pptx"
+    }
+  ],
+  "createdAt": "2026-01-13",
+  "updatedAt": "2026-01-13"
+}
