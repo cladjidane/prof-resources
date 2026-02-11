@@ -1,0 +1,61 @@
+{
+  "schools": [
+    {
+      "id": "ubo",
+      "name": "UBO",
+      "fullName": "Université de Bretagne Occidentale",
+      "color": "#1a56db",
+      "logo": "🎓",
+      "specialties": [
+        {
+          "id": "deust-tmic",
+          "name": "DEUST T-MIC",
+          "fullName": "Technicien en Maintenance Informatique et Réseaux",
+          "year": "2024-2025"
+        }
+      ]
+    },
+    {
+      "id": "isen",
+      "name": "ISEN",
+      "fullName": "ISEN Brest - École d'ingénieurs",
+      "color": "#e94560",
+      "logo": "⚡",
+      "specialties": [
+        {
+          "id": "cir2",
+          "name": "CIR2",
+          "fullName": "Cycle Ingénieur 2ème année",
+          "year": "2024-2025"
+        },
+        {
+          "id": "cir3",
+          "name": "CIR3",
+          "fullName": "Cycle Ingénieur 3ème année",
+          "year": "2024-2025"
+        },
+        {
+          "id": "m2",
+          "name": "M2",
+          "fullName": "Master 2",
+          "year": "2024-2025"
+        }
+      ]
+    },
+    {
+      "id": "uit",
+      "name": "UIT",
+      "fullName": "Université Internationale de Tunis",
+      "color": "#059669",
+      "logo": "🌍",
+      "specialties": [
+        {
+          "id": "l3-info",
+          "name": "L3 Info",
+          "fullName": "Licence 3 Informatique",
+          "year": "2024-2025"
+        }
+      ]
+    }
+  ]
+}
