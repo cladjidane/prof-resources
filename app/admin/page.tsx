@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { getSchools, getCourses } from '@/lib/content'
 import { School, BookOpen, FileText, Plus, Settings, BarChart3 } from 'lucide-react'
+import { LogoutButton } from './components/LogoutButton'
 
 export default function AdminDashboard() {
   const schools = getSchools()
@@ -12,13 +13,16 @@ export default function AdminDashboard() {
   return (
     <div className="min-h-[80vh] bg-gray-100">
       {/* Header */}
-      <section className="bg-primary text-white py-8">
-        <div className="container mx-auto px-4">
-          <h1 className="text-3xl font-bold flex items-center gap-3">
-            <Settings className="w-8 h-8" />
-            Administration
-          </h1>
-          <p className="text-gray-300 mt-2">Gérez vos écoles, spécialités et cours</p>
+      <section className="bg-white shadow-sm border-b py-6 mb-8">
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          <div>
+            <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+              <Settings className="w-6 h-6 text-gray-600" />
+              Administration
+            </h1>
+            <p className="text-gray-500 text-sm mt-1">Gérez vos écoles, spécialités et cours</p>
+          </div>
+          <LogoutButton />
         </div>
       </section>
 
