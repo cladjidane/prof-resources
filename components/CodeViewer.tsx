@@ -229,10 +229,10 @@ function parseMarkdownToSections(content: string): Section[] {
   return sections
 }
 
-// Simple syntax highlighting
+// Robust syntax highlighting that prevents regex overlap
 function highlightCode(code: string, language: string): string {
   // Basic HTML escaping
-  let escaped = code
+  const escaped = code
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
@@ -277,9 +277,52 @@ function highlightCode(code: string, language: string): string {
 
   const langPatterns = patterns[language] || patterns.html || []
 
+  // Segment-based replacement to avoid matching inside already generated HTML
+  let segments: { text: string; isHtml: boolean }[] = [{ text: escaped, isHtml: false }]
+
   for (const { pattern, className } of langPatterns) {
-    escaped = escaped.replace(pattern, (match) => `<span class="${className}">${match}</span>`)
+    const newSegments: typeof segments = []
+
+    for (const segment of segments) {
+      // Skip already highlighted segments
+      if (segment.isHtml) {
+        newSegments.push(segment)
+        continue
+      }
+
+      let lastIndex = 0
+      // Ensure global search
+      const regex = new RegExp(pattern.source, pattern.flags.includes('g') ? pattern.flags : pattern.flags + 'g')
+      
+      let match
+      while ((match = regex.exec(segment.text)) !== null) {
+        // Add text before match
+        if (match.index > lastIndex) {
+          newSegments.push({ 
+            text: segment.text.slice(lastIndex, match.index), 
+            isHtml: false 
+          })
+        }
+
+        // Add matched text wrapped in span
+        newSegments.push({
+          text: `<span class="${className}">${match[0]}</span>`,
+          isHtml: true
+        })
+
+        lastIndex = regex.lastIndex
+      }
+
+      // Add remaining text
+      if (lastIndex < segment.text.length) {
+        newSegments.push({ 
+          text: segment.text.slice(lastIndex), 
+          isHtml: false 
+        })
+      }
+    }
+    segments = newSegments
   }
 
-  return escaped
+  return segments.map(s => s.text).join('')
 }
