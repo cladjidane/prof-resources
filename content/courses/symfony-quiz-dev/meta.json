@@ -7,6 +7,12 @@
   "tags": ["symfony", "php", "quiz"],
   "resources": [
     {
+      "id": "code",
+      "type": "code",
+      "title": "Code à copier",
+      "file": "code.md"
+    },
+    {
       "id": "pptx",
       "type": "download",
       "title": "Présentation PowerPoint",
