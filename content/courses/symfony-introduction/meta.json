@@ -1,0 +1,18 @@
+{
+  "id": "symfony-introduction",
+  "title": "Symfony - Introduction",
+  "description": "Introduction au framework Symfony : installation, architecture, concepts fondamentaux",
+  "school": "ubo",
+  "specialty": "deust-tmic",
+  "tags": ["symfony", "php", "introduction"],
+  "resources": [
+    {
+      "id": "pptx",
+      "type": "download",
+      "title": "Présentation PowerPoint",
+      "file": "files/symfony-introduction.pptx"
+    }
+  ],
+  "createdAt": "2026-03-05",
+  "updatedAt": "2026-03-05"
+}

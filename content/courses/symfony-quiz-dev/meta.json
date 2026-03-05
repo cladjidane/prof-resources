@@ -1,0 +1,18 @@
+{
+  "id": "symfony-quiz-dev",
+  "title": "Symfony - Quiz développement",
+  "description": "Quiz interactif pour vérifier les acquis sur le développement avec Symfony",
+  "school": "ubo",
+  "specialty": "deust-tmic",
+  "tags": ["symfony", "php", "quiz"],
+  "resources": [
+    {
+      "id": "pptx",
+      "type": "download",
+      "title": "Présentation PowerPoint",
+      "file": "files/symfony-quiz-dev.pptx"
+    }
+  ],
+  "createdAt": "2026-03-05",
+  "updatedAt": "2026-03-05"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "symfony-premiere-page",
+  "title": "Symfony - Première page",
+  "description": "Créer sa première page avec Symfony : routes, controllers et templates Twig",
+  "school": "ubo",
+  "specialty": "deust-tmic",
+  "tags": ["symfony", "php", "twig", "routing"],
+  "resources": [
+    {
+      "id": "pptx",
+      "type": "download",
+      "title": "Présentation PowerPoint",
+      "file": "files/symfony-premiere-page.pptx"
+    }
+  ],
+  "createdAt": "2026-03-05",
+  "updatedAt": "2026-03-05"
+}
