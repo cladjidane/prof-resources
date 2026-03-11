@@ -1,0 +1,24 @@
+{
+  "id": "symfony-crud-database",
+  "title": "Symfony - CRUD et base de données",
+  "description": "Créer, lire, modifier et supprimer des données avec Doctrine ORM et SQLite",
+  "school": "ubo",
+  "specialty": "deust-tmic",
+  "tags": ["symfony", "php", "doctrine", "crud", "database", "twig"],
+  "resources": [
+    {
+      "id": "code",
+      "type": "code",
+      "title": "Code à copier",
+      "file": "code.md"
+    },
+    {
+      "id": "pptx",
+      "type": "download",
+      "title": "Présentation PowerPoint",
+      "file": "files/symfony-crud-database.pptx"
+    }
+  ],
+  "createdAt": "2026-03-11",
+  "updatedAt": "2026-03-11"
+}
